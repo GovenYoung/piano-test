@@ -2,7 +2,7 @@ import {
   defaultMusicSrc,
 } from './defaultData.js';
 
-var $keysList = document.getElementsByClassName('key')
+var $keysList = document.getElementsByClassName('key');
 
 function MusicPlay(defaultMusicSrc, key) {
   return new Promise((resplve, reject) => {
@@ -12,20 +12,20 @@ function MusicPlay(defaultMusicSrc, key) {
       newAudio.autoplay = true; //加载完成后立即播放
       // newAudio.play(); //播放音频
       newAudio.addEventListener("ended", () => { //音频播放完毕
-        newAudio.removeEventListener("ended", () => { })
+        newAudio.removeEventListener("ended", () => { });
         newAudio = null; //销毁
-      })
+      });
       resplve();
     } else {
       reject("无此音乐文件");
-    }
+    };
   });
-}
+};
 
 //键盘控件点击
 function clickMusicKnock(e) {
+  console.log(1)
   let key = e.target.className.split("num")[1];
-  console.log(key)
   //调用播放的方法
   MusicPlay(defaultMusicSrc, key).then(
     () => {
@@ -35,7 +35,7 @@ function clickMusicKnock(e) {
       // console.log("播放失败:", err)
     },
   )
-}
+};
 
 for (let i in $keysList) {
   if (typeof $keysList[i] == "object") {
