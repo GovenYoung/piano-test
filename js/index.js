@@ -24,7 +24,8 @@ function MusicPlay(defaultMusicSrc, key) {
 
 //键盘控件点击
 function clickMusicKnock(e) {
-  let key = e.target.className.split("num")[1]
+  let key = e.target.className.split("num")[1];
+  console.log(key)
   //调用播放的方法
   MusicPlay(defaultMusicSrc, key).then(
     () => {
