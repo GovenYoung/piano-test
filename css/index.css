@@ -11,7 +11,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: skyblue;
   margin: 15px auto 0;
 }
 
@@ -21,9 +20,4 @@
   margin-bottom: 7px;
   background: crimson;
   cursor: pointer;
-}
-
-.keysList li:active {
-  background: rgb(182, 38, 67);
-
 }
